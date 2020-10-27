@@ -13,7 +13,7 @@ int _printf(const char *format, ...)
 	va_start(arg, format);
 	if (format == NULL)
 		return (-1);
-	while (format[i] != '\0')
+	for (i = 0; format[i] != '\0'; i++)
 	{
 		if (format[i] == '%')
 		{
@@ -23,7 +23,7 @@ int _printf(const char *format, ...)
 			if (format[i] == '\0')
 				return (-1);
 			count += checker_spec(format[i + 1], arg) - 1;
-			i += 2;
+			i += 1;
 		}
 		else
 		{
