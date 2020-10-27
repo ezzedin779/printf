@@ -36,4 +36,10 @@ My name is ROUND and I am 23 years old
 .SH RETURN VALUE
 _printf returns the number of characters printed 
 .SH SEE ALSO
+man vprintf
+man printf
+.SH BUGS
+No bugs found yet and no bugs will be found
+.SH AUTHOR
+Oussema Ajmi, Abderrahmen Babchia .
 
