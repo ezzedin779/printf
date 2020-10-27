@@ -1,5 +1,7 @@
 #include "holberton.h"
+
 void print_string(char *str);
+
 /**
  *_printf - print output considering the format.
  *@format: format of output
@@ -14,38 +16,37 @@ int _printf(const char *format, ...)
 	int count = 0;
 
 	va_start(arg, format);
+	traverse = format;
 
-	for (traverse = format; *traverse != '\0'; traverse++)
+	while (*traverse != '\0')
 	{
-		while (*traverse != '\0')
+		while (*traverse != '%' && *traverse != '\0')
 		{
-			while (*traverse != '%')
-			{
-				_putchar(*traverse);
-				traverse++;
-				count++;
-			}
+			_putchar(*traverse);
 			traverse++;
-			switch (*traverse)
-			{
-				case 'c':
-				i = va_arg(arg, int);
-				_putchar(i);
-				count++;
-				break;
-
-				case 's':
-				s = va_arg(arg, char *);
-				print_string(s);
-				count++;
-				break;
-
-				case '%':
-				_putchar('%');
-				count++;
-				break;
-			}
+			count++;
 		}
+		traverse++;
+		switch (*traverse)
+		{
+			case 'c':
+			i = va_arg(arg, int);
+			_putchar(i);
+			count++;
+			break;
+
+			case 's':
+			s = va_arg(arg, char *);
+			print_string(s);
+			count++;
+			break;
+
+			case '%':
+			_putchar('%');
+			count++;
+			break;
+		}
+		traverse++;
 	}
 	va_end(arg);
 	return (count);
@@ -60,5 +61,4 @@ void print_string(char *str)
 
 	for (i = 0; str[i] != '\0'; i++)
 		_putchar(str[i]);
-	str[i] = '\0';
 }
