@@ -22,8 +22,8 @@ int _printf(const char *format, ...)
 				i++;
 			if (format[i] == '\0')
 				return (-1);
-			count += checker_spec(format[i + 1], arg);
-			i += 1;
+			count += checker_spec(format[i + 1], arg) - 1;
+			i += 2;
 		}
 		else
 		{
