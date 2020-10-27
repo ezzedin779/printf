@@ -7,42 +7,47 @@ void print_string(char *str);
  */
 int _printf(const char *format, ...)
 {
-  char const *traverse; 
-  unsigned int i; 
-  char *s; 
-  va_list arg;
-  int count = 0;
+	char const *traverse;
+	unsigned int i;
+	char *s;
+	va_list arg;
+	int count = 0;
 
-  va_start(arg, format); 
-  
-  for (traverse = format; *traverse != '\0'; traverse++) 
-    {
+	va_start(arg, format);
+
+	for (traverse = format; *traverse != '\0'; traverse++)
+	{
 		while (*traverse != '\0')
-{      while ( *traverse != '%') 
-	{ 
-	  _putchar(*traverse);
-	  traverse++;
-	  count++;
-	}	
-		traverse++; 
-      switch(*traverse) 
-	{ 
-	case 'c' : i = va_arg(arg,int);//Fetch char argument
-	  _putchar(i);
-	  count++;
-	  break; 
+		{
+			while (*traverse != '%')
+			{
+				_putchar(*traverse);
+				traverse++;
+				count++;
+			}
+			traverse++;
+			switch (*traverse)
+			{
+				case 'c':
+				i = va_arg(arg, int);
+				_putchar(i);
+				count++;
+				break;
 
-	case 's': s = va_arg(arg,char *); //Fetch string
-	  print_string(s);
-	  count++; 
-	  break; 
-	case '%': _putchar('%');
-			  count++;
-			  break;
+				case 's':
+				s = va_arg(arg, char *);
+				print_string(s);
+				count++;
+				break;
+
+				case '%':
+				_putchar('%');
+				count++;
+				break;
+			}
+		}
 	}
-    }
-	}
-  va_end(arg);
+	va_end(arg);
 	return (count);
 }
 /**
