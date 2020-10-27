@@ -16,7 +16,7 @@
     if (a < 0)
       {
 	_putchar ('-');
-	count_int++;
+	count++;
 	a *= -1;
       }
     b = a;
@@ -27,7 +27,7 @@
       }
     while (abdesami3 != 0)
       {
-	count_int++;
+	count++;
 	_putchar ('0' + (b / abdesami3));
 	b = b % abdesami3;
 	abdesami3 = abdesami3 / 10;
