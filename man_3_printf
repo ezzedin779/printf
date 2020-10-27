@@ -1,0 +1,39 @@
+.TH man printf  "27 October 2020" "GNU" "_printf manuel page"
+.SH NAME
+.B _printf
+this function is a simuation to the origin printf , they both work the same way (formatted output to stdout).
+.SH SYNOPSIS
+.B #include 'holberton.h'
+.br
+.B int _printf(const char *format, ...)
+.br
+.B int checker_spec(char c, va_list arg);
+.br
+.B int _integer(va_list spec);
+.br
+.B int _printf(const char *format, ...);
+.br
+.B int _print_char(va_list spec);
+.br
+.B int _print_string(va_list spec);
+.SH DESCRIPTION
+Formats and prints data to standard output after conversion.
+.SH specifiers 
+.BR "d, i"
+the argument int will be converted to signed int or signed decimal
+.BR "c"
+int argument is coverted to char
+.BR "s"
+int argument is converted to string
+.BR "%"
+The percent will be directly written, with no argument being taken.
+.SH Example
+Print something containing all convertions :
+#include "holberton.h"
+_printf("My name is %s and I am %i years old", ROUND, 23);
+expected output:
+My name is ROUND and I am 23 years old
+.SH RETURN VALUE
+_printf returns the number of characters printed 
+.SH SEE ALSO
+
