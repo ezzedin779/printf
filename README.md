@@ -5,7 +5,7 @@ Write your own printf() function in c
 ****PRINTF:**** "printf" is the name of one of the main C output functions, and stands for "print formatted". printf format strings are complementary to scanf format strings, which provide formatted input (parsing). In both cases these provide simple functionality and fixed format compared to more sophisticated and flexible template engines or parsers, but are sufficient for many purposes
 
 
-****Histroy of printf:**** 
+****Histroy of printf:****
 
 *Early programming languages such as Fortran used special statements with completely different syntax from other calculations to build formatting descriptions. In this example, the format is specified on line 601, and the WRITE command refers to it by line number:
 
@@ -25,7 +25,7 @@ C's printf has its origins in BCPL's writef function (1966). In comparison to pr
 
 WRITEF("%I2-QUEENS PROBLEM HAS %I5 SOLUTIONS*N", NUMQUEENS, COUNT)
 Probably the first copying of the syntax to outside the C language was the Unix printf shell command, which first appeared in Version 4, as part of the porting to C.
- 
+
 ****ABOUT THE TEST :****
 
 **The printf test includes a variety of matching problems. They are designed to be tricky, and student
