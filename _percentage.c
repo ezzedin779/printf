@@ -2,9 +2,10 @@
 /**
  * _percentage - Print percentage character
  * @spec: specifiers 
- * 
+ * Return: 1
  */
-void _percentage()
+int _percentage()
 {
   _putchar('%');
+  return (1);
 }
