@@ -5,9 +5,9 @@
  * @c: The character to print
  *
  * Return, 1.
- * On error, -1 
+ * On error, -1
  */
 int _putchar(char c)
 {
-  return (write(1, &c, 1));
+return (write(1, &c, 1));
 }
